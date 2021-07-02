@@ -37,16 +37,18 @@ class LighthouseGraphQLPassportServiceProvider extends ServiceProvider
         $this->extendAuthorizationServer();
         $this->registerConfig();
 
-        app('events')->listen(
-            BuildSchemaString::class,
-            function (): string {
-                if (config('lighthouse-graphql-passport.schema')) {
-                    return file_get_contents(config('lighthouse-graphql-passport.schema'));
+        if (config('lighthouse-graphql-passport.import', true)) {
+            app('events')->listen(
+                BuildSchemaString::class,
+                function (): string {
+                    if (config('lighthouse-graphql-passport.schema')) {
+                        return file_get_contents(config('lighthouse-graphql-passport.schema'));
+                    }
+    
+                    return file_get_contents(__DIR__.'/../../graphql/auth.graphql');
                 }
-
-                return file_get_contents(__DIR__.'/../../graphql/auth.graphql');
-            }
-        );
+            );
+        }
     }
 
     /**
