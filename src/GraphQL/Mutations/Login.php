@@ -31,8 +31,8 @@ class Login extends BaseAuthResolver
         $check_2fa = $this->check2fa($user);
 
         if ($check_2fa) {
-            $this->validate2fa($args['code'], $args['recovery_code']);
-            $this->challenge2fa($user, $args['code'], $args['recovery_code']);
+            $this->validate2fa($args['code'] ?? null, $args['recovery_code'] ?? null);
+            $this->challenge2fa($user, $args['code'] ?? null, $args['recovery_code'] ?? null);
         }
 
         event(new UserLoggedIn($user));
@@ -61,8 +61,12 @@ class Login extends BaseAuthResolver
         if (!class_exists('\Laravel\Fortify\FortifyServiceProvider')) {
             return false;
         }
+        if (! '\Laravel\Fortify\Features'::enabled('\Laravel\Fortify\Features'::twoFactorAuthentication())) {
+            return false;
+        }
+
         return optional($user)->two_factor_secret &&
-            in_array(TwoFactorAuthenticatable::class, class_uses_recursive($user));
+            in_array(\Laravel\Fortify\TwoFactorAuthenticatable::class, class_uses_recursive($user));
     }
 
     protected function validate2fa($code, $recovery_code)
@@ -94,7 +98,7 @@ class Login extends BaseAuthResolver
 
         $valid = $code && app('\Laravel\Fortify\TwoFactorAuthenticationProvider')->verify(
             decrypt($user->two_factor_secret),
-            $this->code
+            $code
         );
 
         if ($valid) return $valid;
