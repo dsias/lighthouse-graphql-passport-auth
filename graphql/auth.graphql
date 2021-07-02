@@ -1,6 +1,8 @@
 input LoginInput {
     username: String!
     password: String!
+    code: String
+    recovery_code: String
 }
 
 input RefreshTokenInput {
