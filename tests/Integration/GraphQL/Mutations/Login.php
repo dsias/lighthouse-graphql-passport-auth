@@ -85,7 +85,7 @@ class Login extends TestCase
         ]);
 
         Event::assertDispatched(UserLoggedIn::class, function (UserLoggedIn $event) use ($user) {
-            return $event->user->id === $user->id;
+            return $event->user->getKey() === $user->getKey();
         });
     }
 

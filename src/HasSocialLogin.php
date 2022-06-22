@@ -45,7 +45,7 @@ trait HasSocialLogin
                 ]);
             }
             SocialProvider::create([
-                'user_id' => $user->id,
+                'user_id' => $user->getKey(),
                 'provider' => $request->get('provider'),
                 'provider_id' => $userData->getId(),
             ]);

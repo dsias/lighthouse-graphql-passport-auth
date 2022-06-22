@@ -95,7 +95,7 @@ class TestCase extends Orchestra
      */
     public function createClientPersonal($user)
     {
-        $client = app(ClientRepository::class)->createPersonalAccessClient($user->id, 'test', 'http://localhost');
+        $client = app(ClientRepository::class)->createPersonalAccessClient($user->getKey(), 'test', 'http://localhost');
         config()->set('lighthouse-graphql-passport.client_id', $client->id);
         config()->set('lighthouse-graphql-passport.client_secret', $client->secret);
     }

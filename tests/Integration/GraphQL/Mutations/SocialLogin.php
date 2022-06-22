@@ -115,7 +115,7 @@ class SocialLogin extends TestCase
         ]);
         $createdUser = User::first();
         $this->assertDatabaseHas('social_providers', [
-            'user_id' => $createdUser->id,
+            'user_id' => $createdUser->getKey(),
             'provider' => 'github',
             'provider_id' => 'fakeId',
         ]);
@@ -127,7 +127,7 @@ class SocialLogin extends TestCase
         $user = factory(User::class)->create();
         $this->mockSocialiteWithUser($user);
         $this->assertDatabaseMissing('social_providers', [
-            'user_id' => $user->id,
+            'user_id' => $user->getKey(),
         ]);
         $response = $this->graphQL(/* @lang GraphQL */ '
             mutation socialLogin($input: SocialLoginInput!) {
@@ -153,7 +153,7 @@ class SocialLogin extends TestCase
         $this->assertArrayHasKey('access_token', $decodedResponse['data']['socialLogin']);
         $this->assertArrayHasKey('refresh_token', $decodedResponse['data']['socialLogin']);
         $this->assertDatabaseHas('social_providers', [
-            'user_id' => $user->id,
+            'user_id' => $user->getKey(),
             'provider' => 'github',
             'provider_id' => 'fakeId',
         ]);

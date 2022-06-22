@@ -39,7 +39,7 @@ class RefreshToken extends TestCase
         $responseBodyRefreshed = json_decode($responseRefreshed->getContent(), true);
         $this->assertNotEquals($responseBody['data']['login']['access_token'], $responseBodyRefreshed['data']['refreshToken']['access_token']);
         Event::assertDispatched(UserRefreshedToken::class, function (UserRefreshedToken $event) use ($user) {
-            return $user->id === $event->user->id;
+            return $user->getKey() === $event->user->getKey();
         });
     }
 }

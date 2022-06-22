@@ -22,7 +22,7 @@ class VerifyEmail extends TestCase
             'password' => bcrypt('123456789'),
         ]);
         $payload = base64_encode(json_encode([
-            'id'         => $user->id,
+            'id'         => $user->getKey(),
             'hash'       => encrypt($user->getEmailForVerification()),
             'expiration' => encrypt(Carbon::now()->addMinutes(10)->toIso8601String()),
         ]));
@@ -51,7 +51,7 @@ class VerifyEmail extends TestCase
         $this->assertArrayHasKey('id', $responseBody['data']['verifyEmail']['user']);
         $this->assertArrayHasKey('name', $responseBody['data']['verifyEmail']['user']);
         $this->assertArrayHasKey('email', $responseBody['data']['verifyEmail']['user']);
-        $userUpdated = UserVerifyEmail::find($user->id);
+        $userUpdated = UserVerifyEmail::find($user->getKey());
         $this->assertNotNull($userUpdated->email_verified_at);
         Event::assertDispatched(\Illuminate\Auth\Events\Verified::class);
     }
@@ -68,7 +68,7 @@ class VerifyEmail extends TestCase
             'password' => bcrypt('123456789'),
         ]);
         $payload = base64_encode(json_encode([
-            'id'         => $user->id,
+            'id'         => $user->getKey(),
             'hash'       => encrypt($user->getEmailForVerification()),
             'expiration' => encrypt(Carbon::now()->subMinutes(10)->toIso8601String()),
         ]));
@@ -89,7 +89,7 @@ class VerifyEmail extends TestCase
         ]);
         $responseBody = json_decode($response->getContent(), true);
         $this->assertArrayHasKey('errors', $responseBody);
-        $userUpdated = UserVerifyEmail::find($user->id);
+        $userUpdated = UserVerifyEmail::find($user->getKey());
         $this->assertNull($userUpdated->email_verified_at);
         Event::assertNotDispatched(\Illuminate\Auth\Events\Verified::class);
     }

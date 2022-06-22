@@ -51,7 +51,7 @@ class ResetPassword extends TestCase
         $this->assertEquals('PASSWORD_UPDATED', $responseBody['data']['updateForgottenPassword']['status']);
         $this->assertEquals('Your password has been reset!', $responseBody['data']['updateForgottenPassword']['message']);
 
-        $user = User::find($user->id);
+        $user = User::find($user->getKey());
         $this->assertTrue(Hash::check('test1234', $user->password));
     }
 

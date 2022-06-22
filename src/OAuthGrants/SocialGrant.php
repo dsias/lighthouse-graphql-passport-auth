@@ -92,6 +92,6 @@ class SocialGrant extends AbstractGrant
             throw OAuthServerException::serverError('Unable to find byLoggedInUser method on user model.');
         }
 
-        return ($user) ? new User($user->id) : null;
+        return ($user) ? new User($user->getKey()) : null;
     }
 }
