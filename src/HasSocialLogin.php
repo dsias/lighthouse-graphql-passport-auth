@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Joselfonseca\LighthouseGraphQLPassport\Models\SocialProvider;
 use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Support\Facades\Crypt;
 
 /**
  * Trait HasSocialLogin.
@@ -27,7 +28,9 @@ trait HasSocialLogin
      */
     public static function byOAuthToken(Request $request)
     {
-        $userData = Socialite::driver($request->get('provider'))->userFromToken($request->get('token'));
+        /** @var AbstractProvider */
+        $provider = Socialite::driver($request->get('provider'));
+        $userData = $provider->userFromToken($request->get('token'));
 
         try {
             $user = static::whereHas('socialProviders', function ($query) use ($request, $userData) {
@@ -48,6 +51,7 @@ trait HasSocialLogin
                 'user_id' => $user->getKey(),
                 'provider' => $request->get('provider'),
                 'provider_id' => $userData->getId(),
+                'provider_token' => Crypt::encryptString($request->get('token')),
             ]);
         }
         Auth::setUser($user);

@@ -23,6 +23,7 @@ class UpdateSocialProviderUsersTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('provider')->index();
             $table->string('provider_id')->index();
+            $table->string('provider_token')->nullable()->index();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

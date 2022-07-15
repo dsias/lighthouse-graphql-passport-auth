@@ -7,6 +7,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
+use Joselfonseca\LighthouseGraphQLPassport\Exceptions\AccountTerminatedException;
 use Nuwave\Lighthouse\Support\Contracts\GraphQLContext;
 
 class Register extends BaseAuthResolver
@@ -67,6 +68,17 @@ class Register extends BaseAuthResolver
     {
         $input = collect($data)->except('password_confirmation')->toArray();
         $input['password'] = Hash::make($input['password']);
+
+        $username = $input[config('lighthouse-graphql-passport.username')];
+        $model = $this->makeAuthModelInstance();
+        $userDeleted = $model::query()
+            ->where(config('lighthouse-graphql-passport.username'), $username)
+            ->onlyTrashed()
+            ->first();
+
+        if ($userDeleted != null) {
+            throw new AccountTerminatedException("Account Terminated.", "This account was Terminated");
+        }
 
         return $this->getAuthModelFactory()->create($input);
     }

@@ -5,6 +5,7 @@ namespace Joselfonseca\LighthouseGraphQLPassport\GraphQL\Mutations;
 use GraphQL\Type\Definition\ResolveInfo;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Joselfonseca\LighthouseGraphQLPassport\Events\UserLoggedIn;
+use Joselfonseca\LighthouseGraphQLPassport\Exceptions\AccountTerminatedException;
 use Nuwave\Lighthouse\Support\Contracts\GraphQLContext;
 use Joselfonseca\LighthouseGraphQLPassport\Exceptions\AuthenticationException;
 
@@ -61,7 +62,7 @@ class Login extends BaseAuthResolver
         if (!class_exists('\Laravel\Fortify\FortifyServiceProvider')) {
             return false;
         }
-        if (! '\Laravel\Fortify\Features'::enabled('\Laravel\Fortify\Features'::twoFactorAuthentication())) {
+        if (!'\Laravel\Fortify\Features'::enabled('\Laravel\Fortify\Features'::twoFactorAuthentication())) {
             return false;
         }
 
@@ -114,8 +115,20 @@ class Login extends BaseAuthResolver
             return $model->findForPassport($username);
         }
 
-        return $model::query()
+        $user = $model::query()
             ->where(config('lighthouse-graphql-passport.username'), $username)
             ->first();
+
+        // Check if SoftDeleted
+        $userDeleted = $model::query()
+            ->where(config('lighthouse-graphql-passport.username'), $username)
+            ->withTrashed()
+            ->first();
+
+        if ($userDeleted != null && $user == null) {
+            throw new AccountTerminatedException("Account Terminated.", "This account was Terminated");
+        }
+
+        return $user;
     }
 }

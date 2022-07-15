@@ -76,6 +76,12 @@ input RegisterInput {
 input SocialLoginInput {
     provider: String! @rules(apply: ["required"])
     token: String! @rules(apply: ["required"])
+    name: NameInput
+}
+
+input NameInput {
+    firstName: String
+    lastName: String
 }
 
 input VerifyEmailInput {
@@ -88,10 +94,16 @@ input UpdatePassword {
     password_confirmation: String!
 }
 
+type DeleteAccountResponse {
+    status: String!
+    message: String
+}
+
 extend type Mutation {
     login(input: LoginInput @spread): AuthPayload! @field(resolver: "Joselfonseca\\LighthouseGraphQLPassport\\GraphQL\\Mutations\\Login@resolve")
     refreshToken(input: RefreshTokenInput @spread): RefreshTokenPayload! @field(resolver: "Joselfonseca\\LighthouseGraphQLPassport\\GraphQL\\Mutations\\RefreshToken@resolve")
     logout: LogoutResponse! @field(resolver: "Joselfonseca\\LighthouseGraphQLPassport\\GraphQL\\Mutations\\Logout@resolve")
+    deleteAccount: DeleteAccountResponse! @field(resolver: "Joselfonseca\\LighthouseGraphQLPassport\\GraphQL\\Mutations\\DeleteUser@resolve") @guard(with: ["api"])
     forgotPassword(input: ForgotPasswordInput! @spread): ForgotPasswordResponse! @field(resolver: "Joselfonseca\\LighthouseGraphQLPassport\\GraphQL\\Mutations\\ForgotPassword@resolve")
     updateForgottenPassword(input: NewPasswordWithCodeInput @spread): ForgotPasswordResponse! @field(resolver: "Joselfonseca\\LighthouseGraphQLPassport\\GraphQL\\Mutations\\ResetPassword@resolve")
     register(input: RegisterInput @spread): RegisterResponse! @field(resolver: "Joselfonseca\\LighthouseGraphQLPassport\\GraphQL\\Mutations\\Register@resolve")
