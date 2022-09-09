@@ -1,6 +1,6 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\Http\Middleware;
+namespace gammak\LighthouseGraphQLPassport\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Factory as Auth;

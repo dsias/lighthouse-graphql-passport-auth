@@ -1,14 +1,14 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\Tests\Integration\GraphQL\Mutations;
+namespace gammak\LighthouseGraphQLPassport\Tests\Integration\GraphQL\Mutations;
 
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Notification;
-use Joselfonseca\LighthouseGraphQLPassport\Events\ForgotPasswordRequested;
-use Joselfonseca\LighthouseGraphQLPassport\Tests\TestCase;
-use Joselfonseca\LighthouseGraphQLPassport\Tests\User;
+use gammak\LighthouseGraphQLPassport\Events\ForgotPasswordRequested;
+use gammak\LighthouseGraphQLPassport\Tests\TestCase;
+use gammak\LighthouseGraphQLPassport\Tests\User;
 
 class ForgotPassword extends TestCase
 {

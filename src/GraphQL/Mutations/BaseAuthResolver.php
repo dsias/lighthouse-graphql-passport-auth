@@ -1,10 +1,10 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\GraphQL\Mutations;
+namespace gammak\LighthouseGraphQLPassport\GraphQL\Mutations;
 
 use Illuminate\Http\Request;
-use Joselfonseca\LighthouseGraphQLPassport\Contracts\AuthModelFactory;
-use Joselfonseca\LighthouseGraphQLPassport\Exceptions\AuthenticationException;
+use gammak\LighthouseGraphQLPassport\Contracts\AuthModelFactory;
+use gammak\LighthouseGraphQLPassport\Exceptions\AuthenticationException;
 
 /**
  * Class BaseAuthResolver.

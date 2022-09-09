@@ -1,11 +1,11 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\Tests;
+namespace gammak\LighthouseGraphQLPassport\Tests;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Joselfonseca\LighthouseGraphQLPassport\HasLoggedInTokens;
-use Joselfonseca\LighthouseGraphQLPassport\HasSocialLogin;
+use gammak\LighthouseGraphQLPassport\HasLoggedInTokens;
+use gammak\LighthouseGraphQLPassport\HasSocialLogin;
 use Laravel\Passport\HasApiTokens;
 
 /**

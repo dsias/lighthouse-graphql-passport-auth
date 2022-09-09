@@ -1,11 +1,11 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\Tests\Integration\GraphQL\Mutations;
+namespace gammak\LighthouseGraphQLPassport\Tests\Integration\GraphQL\Mutations;
 
 use Illuminate\Support\Facades\Event;
-use Joselfonseca\LighthouseGraphQLPassport\Events\PasswordUpdated;
-use Joselfonseca\LighthouseGraphQLPassport\Tests\TestCase;
-use Joselfonseca\LighthouseGraphQLPassport\Tests\User;
+use gammak\LighthouseGraphQLPassport\Events\PasswordUpdated;
+use gammak\LighthouseGraphQLPassport\Tests\TestCase;
+use gammak\LighthouseGraphQLPassport\Tests\User;
 use Laravel\Passport\Passport;
 
 class UpdatePassword extends TestCase

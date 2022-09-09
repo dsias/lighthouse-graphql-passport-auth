@@ -1,8 +1,8 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\Tests;
+namespace gammak\LighthouseGraphQLPassport\Tests;
 
-use Joselfonseca\LighthouseGraphQLPassport\Providers\LighthouseGraphQLPassportServiceProvider;
+use gammak\LighthouseGraphQLPassport\Providers\LighthouseGraphQLPassportServiceProvider;
 use Laravel\Passport\ClientRepository;
 use Laravel\Passport\PassportServiceProvider;
 use Laravel\Socialite\SocialiteServiceProvider;

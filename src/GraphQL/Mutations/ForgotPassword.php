@@ -1,11 +1,11 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\GraphQL\Mutations;
+namespace gammak\LighthouseGraphQLPassport\GraphQL\Mutations;
 
 use GraphQL\Type\Definition\ResolveInfo;
 use Illuminate\Support\Facades\Password;
-use Joselfonseca\LighthouseGraphQLPassport\Events\ForgotPasswordRequested;
-use Joselfonseca\LighthouseGraphQLPassport\Exceptions\EmailNotSentException;
+use gammak\LighthouseGraphQLPassport\Events\ForgotPasswordRequested;
+use gammak\LighthouseGraphQLPassport\Exceptions\EmailNotSentException;
 use Nuwave\Lighthouse\Support\Contracts\GraphQLContext;
 
 class ForgotPassword

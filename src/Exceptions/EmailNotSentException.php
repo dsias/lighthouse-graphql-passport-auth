@@ -1,6 +1,6 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\Exceptions;
+namespace gammak\LighthouseGraphQLPassport\Exceptions;
 
 use Exception;
 use Nuwave\Lighthouse\Exceptions\RendersErrorsExtensions;

@@ -1,12 +1,12 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\Providers;
+namespace gammak\LighthouseGraphQLPassport\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Joselfonseca\LighthouseGraphQLPassport\Contracts\AuthModelFactory as AuthModelFactoryContract;
-use Joselfonseca\LighthouseGraphQLPassport\Factories\AuthModelFactory;
-use Joselfonseca\LighthouseGraphQLPassport\OAuthGrants\LoggedInGrant;
-use Joselfonseca\LighthouseGraphQLPassport\OAuthGrants\SocialGrant;
+use gammak\LighthouseGraphQLPassport\Contracts\AuthModelFactory as AuthModelFactoryContract;
+use gammak\LighthouseGraphQLPassport\Factories\AuthModelFactory;
+use gammak\LighthouseGraphQLPassport\OAuthGrants\LoggedInGrant;
+use gammak\LighthouseGraphQLPassport\OAuthGrants\SocialGrant;
 use Laravel\Passport\Bridge\RefreshTokenRepository;
 use Laravel\Passport\Bridge\UserRepository;
 use Laravel\Passport\Passport;

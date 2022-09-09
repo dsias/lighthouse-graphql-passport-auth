@@ -1,8 +1,8 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport;
+namespace gammak\LighthouseGraphQLPassport;
 
-use Joselfonseca\LighthouseGraphQLPassport\Notifications\VerifyEmail;
+use gammak\LighthouseGraphQLPassport\Notifications\VerifyEmail;
 
 trait MustVerifyEmailGraphQL
 {

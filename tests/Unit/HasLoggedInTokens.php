@@ -1,9 +1,9 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\Tests\Unit;
+namespace gammak\LighthouseGraphQLPassport\Tests\Unit;
 
-use Joselfonseca\LighthouseGraphQLPassport\Tests\TestCase;
-use Joselfonseca\LighthouseGraphQLPassport\Tests\User;
+use gammak\LighthouseGraphQLPassport\Tests\TestCase;
+use gammak\LighthouseGraphQLPassport\Tests\User;
 use Laravel\Passport\Passport;
 
 class HasLoggedInTokens extends TestCase

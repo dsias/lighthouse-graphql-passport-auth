@@ -1,6 +1,6 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\Tests;
+namespace gammak\LighthouseGraphQLPassport\Tests;
 
 use Laravel\Passport\Passport;
 
@@ -13,7 +13,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         Passport::loadKeysFrom(__DIR__.'/storage/');
         config()->set('lighthouse.route.middleware', [
             \Nuwave\Lighthouse\Support\Http\Middleware\AcceptJson::class,
-            \Joselfonseca\LighthouseGraphQLPassport\Http\Middleware\AuthenticateWithApiGuard::class,
+            \gammak\LighthouseGraphQLPassport\Http\Middleware\AuthenticateWithApiGuard::class,
         ]);
     }
 }

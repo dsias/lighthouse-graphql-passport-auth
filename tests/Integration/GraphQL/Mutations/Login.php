@@ -1,12 +1,12 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\Tests\Integration\GraphQL\Mutations;
+namespace gammak\LighthouseGraphQLPassport\Tests\Integration\GraphQL\Mutations;
 
 use Illuminate\Support\Facades\Event;
-use Joselfonseca\LighthouseGraphQLPassport\Events\UserLoggedIn;
-use Joselfonseca\LighthouseGraphQLPassport\Tests\Admin;
-use Joselfonseca\LighthouseGraphQLPassport\Tests\TestCase;
-use Joselfonseca\LighthouseGraphQLPassport\Tests\User;
+use gammak\LighthouseGraphQLPassport\Events\UserLoggedIn;
+use gammak\LighthouseGraphQLPassport\Tests\Admin;
+use gammak\LighthouseGraphQLPassport\Tests\TestCase;
+use gammak\LighthouseGraphQLPassport\Tests\User;
 use Nuwave\Lighthouse\Testing\MakesGraphQLRequests;
 
 class Login extends TestCase

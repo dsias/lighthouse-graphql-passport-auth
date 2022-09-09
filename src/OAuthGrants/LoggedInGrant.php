@@ -1,6 +1,6 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\OAuthGrants;
+namespace gammak\LighthouseGraphQLPassport\OAuthGrants;
 
 use DateInterval;
 use Illuminate\Http\Request;

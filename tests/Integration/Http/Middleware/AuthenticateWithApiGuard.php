@@ -1,9 +1,9 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\Tests\Http\Middleware;
+namespace gammak\LighthouseGraphQLPassport\Tests\Http\Middleware;
 
-use Joselfonseca\LighthouseGraphQLPassport\Tests\TestCase;
-use Joselfonseca\LighthouseGraphQLPassport\Tests\User;
+use gammak\LighthouseGraphQLPassport\Tests\TestCase;
+use gammak\LighthouseGraphQLPassport\Tests\User;
 
 class AuthenticateWithApiGuard extends TestCase
 {

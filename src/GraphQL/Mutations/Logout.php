@@ -1,11 +1,11 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\GraphQL\Mutations;
+namespace gammak\LighthouseGraphQLPassport\GraphQL\Mutations;
 
 use GraphQL\Type\Definition\ResolveInfo;
 use Illuminate\Support\Facades\Auth;
-use Joselfonseca\LighthouseGraphQLPassport\Events\UserLoggedOut;
-use Joselfonseca\LighthouseGraphQLPassport\Exceptions\AuthenticationException;
+use gammak\LighthouseGraphQLPassport\Events\UserLoggedOut;
+use gammak\LighthouseGraphQLPassport\Exceptions\AuthenticationException;
 use Nuwave\Lighthouse\Support\Contracts\GraphQLContext;
 
 class Logout extends BaseAuthResolver

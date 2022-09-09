@@ -1,12 +1,12 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\Tests;
+namespace gammak\LighthouseGraphQLPassport\Tests;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Joselfonseca\LighthouseGraphQLPassport\HasLoggedInTokens;
-use Joselfonseca\LighthouseGraphQLPassport\MustVerifyEmailGraphQL;
+use gammak\LighthouseGraphQLPassport\HasLoggedInTokens;
+use gammak\LighthouseGraphQLPassport\MustVerifyEmailGraphQL;
 use Laravel\Passport\HasApiTokens;
 
 class UserVerifyEmail extends Authenticatable implements MustVerifyEmail

@@ -1,6 +1,6 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\Notifications;
+namespace gammak\LighthouseGraphQLPassport\Notifications;
 
 use Illuminate\Support\Carbon;
 

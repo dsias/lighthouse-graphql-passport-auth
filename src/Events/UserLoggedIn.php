@@ -1,6 +1,6 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\Events;
+namespace gammak\LighthouseGraphQLPassport\Events;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 

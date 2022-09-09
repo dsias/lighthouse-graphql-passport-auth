@@ -1,10 +1,10 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\Tests\Integration\GraphQL\Mutations;
+namespace gammak\LighthouseGraphQLPassport\Tests\Integration\GraphQL\Mutations;
 
-use Joselfonseca\LighthouseGraphQLPassport\Models\SocialProvider;
-use Joselfonseca\LighthouseGraphQLPassport\Tests\TestCase;
-use Joselfonseca\LighthouseGraphQLPassport\Tests\User;
+use gammak\LighthouseGraphQLPassport\Models\SocialProvider;
+use gammak\LighthouseGraphQLPassport\Tests\TestCase;
+use gammak\LighthouseGraphQLPassport\Tests\User;
 use Laravel\Socialite\Facades\Socialite;
 use Mockery;
 use Nuwave\Lighthouse\Testing\MakesGraphQLRequests;

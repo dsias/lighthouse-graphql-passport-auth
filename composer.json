@@ -13,6 +13,10 @@
         {
             "name": "Jose Luis Fonseca",
             "email": "jose@ditecnologia.com"
+        },
+        {
+            "name": "Dustin Sias",
+            "email": "dustin@questio.com"
         }
     ],
     "require": {
@@ -29,12 +33,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Joselfonseca\\LighthouseGraphQLPassport\\": "src/"
+            "gammak\\LighthouseGraphQLPassport\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Joselfonseca\\LighthouseGraphQLPassport\\Tests\\": "tests/"
+            "gammak\\LighthouseGraphQLPassport\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "dev",
@@ -42,7 +46,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Joselfonseca\\LighthouseGraphQLPassport\\Providers\\LighthouseGraphQLPassportServiceProvider"
+                "gammak\\LighthouseGraphQLPassport\\Providers\\LighthouseGraphQLPassportServiceProvider"
             ]
         }
     },

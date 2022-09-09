@@ -1,6 +1,6 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\Contracts;
+namespace gammak\LighthouseGraphQLPassport\Contracts;
 
 use Illuminate\Database\Eloquent\Model;
 

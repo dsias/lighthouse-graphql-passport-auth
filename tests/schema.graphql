@@ -1,4 +1,4 @@
-type User @model(class: "Joselfonseca\\LighthouseGraphQLPassport\\Tests\\User"){
+type User @model(class: "gammak\\LighthouseGraphQLPassport\\Tests\\User"){
     id: ID!
     name: String!
     email: String!
@@ -6,9 +6,9 @@ type User @model(class: "Joselfonseca\\LighthouseGraphQLPassport\\Tests\\User"){
 
 type Query {
     me: User @auth(guard: "api")
-    loggedInUserViaGuardForTest: User @field(resolver: "Joselfonseca\\LighthouseGraphQLPassport\\Tests\\LoggedInUser@resolve") @guard(with: ["api"])
+    loggedInUserViaGuardForTest: User @field(resolver: "gammak\\LighthouseGraphQLPassport\\Tests\\LoggedInUser@resolve") @guard(with: ["api"])
 }
 
 type Mutation {
-    createUser: User @create(model: "Joselfonseca\\LighthouseGraphQLPassport\\Tests\\User")
+    createUser: User @create(model: "gammak\\LighthouseGraphQLPassport\\Tests\\User")
 }

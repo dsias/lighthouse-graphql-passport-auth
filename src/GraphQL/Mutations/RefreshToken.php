@@ -1,9 +1,9 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\GraphQL\Mutations;
+namespace gammak\LighthouseGraphQLPassport\GraphQL\Mutations;
 
 use GraphQL\Type\Definition\ResolveInfo;
-use Joselfonseca\LighthouseGraphQLPassport\Events\UserRefreshedToken;
+use gammak\LighthouseGraphQLPassport\Events\UserRefreshedToken;
 use Lcobucci\JWT\Configuration;
 use Nuwave\Lighthouse\Support\Contracts\GraphQLContext;
 

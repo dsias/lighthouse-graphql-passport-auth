@@ -1,13 +1,13 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport;
+namespace gammak\LighthouseGraphQLPassport;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-use Joselfonseca\LighthouseGraphQLPassport\Models\SocialProvider;
+use gammak\LighthouseGraphQLPassport\Models\SocialProvider;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Crypt;
 

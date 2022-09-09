@@ -1,6 +1,6 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport;
+namespace gammak\LighthouseGraphQLPassport;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

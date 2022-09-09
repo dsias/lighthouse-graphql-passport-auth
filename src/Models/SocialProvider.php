@@ -1,9 +1,9 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\Models;
+namespace gammak\LighthouseGraphQLPassport\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Joselfonseca\LighthouseGraphQLPassport\Contracts\AuthModelFactory;
+use gammak\LighthouseGraphQLPassport\Contracts\AuthModelFactory;
 
 class SocialProvider extends Model
 {

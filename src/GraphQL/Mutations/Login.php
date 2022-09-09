@@ -1,13 +1,13 @@
 <?php
 
-namespace Joselfonseca\LighthouseGraphQLPassport\GraphQL\Mutations;
+namespace gammak\LighthouseGraphQLPassport\GraphQL\Mutations;
 
 use GraphQL\Type\Definition\ResolveInfo;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Joselfonseca\LighthouseGraphQLPassport\Events\UserLoggedIn;
-use Joselfonseca\LighthouseGraphQLPassport\Exceptions\AccountTerminatedException;
+use gammak\LighthouseGraphQLPassport\Events\UserLoggedIn;
+use gammak\LighthouseGraphQLPassport\Exceptions\AccountTerminatedException;
 use Nuwave\Lighthouse\Support\Contracts\GraphQLContext;
-use Joselfonseca\LighthouseGraphQLPassport\Exceptions\AuthenticationException;
+use gammak\LighthouseGraphQLPassport\Exceptions\AuthenticationException;
 
 class Login extends BaseAuthResolver
 {
